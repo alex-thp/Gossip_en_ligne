@@ -1,0 +1,2 @@
+class Ragot < ApplicationRecord
+end
