@@ -8,5 +8,9 @@
 require 'faker'
 
 10.times do
-	potin = Ragot.create!(Author: Faker::StarWars.character, Content: Faker::StarWars.quote)
+	ragot = Ragot.create!(Author: Faker::StarWars.character)
+end
+
+20.times do
+    potin = Potin.create!(Title: Faker::StarWars.planet, Content: Faker::StarWars.quote, ragot_id: Faker::Number.between(1, 10))
 end

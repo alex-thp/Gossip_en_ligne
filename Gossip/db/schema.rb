@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_101040) do
+ActiveRecord::Schema.define(version: 2018_10_30_141540) do
+
+  create_table "potins", force: :cascade do |t|
+    t.integer "ragot_id"
+    t.string "Title"
+    t.text "Content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ragot_id"], name: "index_potins_on_ragot_id"
+  end
 
   create_table "ragots", force: :cascade do |t|
     t.string "Author"
-    t.text "Content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

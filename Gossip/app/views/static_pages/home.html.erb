@@ -1,0 +1,14 @@
+<h1>Home</h1>
+<p>Hello <%= @user %> !</p>
+<h6>Voici les potins :</h6>
+<p>
+<%  u = Potin.all %>
+   <% i = u.length %>
+   <% i.times do |l|%>
+     <% @liste = Potin.find("#{l + 1}") %>
+     <% k = @liste.Title %>
+     <% j = @liste.Content %>
+     <p><%= "#{k} : #{j}" %></p>
+     <% l = l + 1%>
+   <% end %>
+</p>
